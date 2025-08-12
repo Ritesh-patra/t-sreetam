@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. T. Seetam Kumar - Interventional Radiologist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'medical-blue': '#0066CC',
+                        'medical-teal': '#00A3A3',
+                        'medical-purple': '#6B46C1',
+                        'accent-orange': '#FF6B35',
+                        'accent-green': '#10B981',
+                        'dark-navy': '#0F172A',
+                        'light-cyan': '#67E8F9'
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'slide-right': 'slideRight 0.8s ease-out',
+                        'fade-in-up': 'fadeInUp 1s ease-out',
+                        'bounce-gentle': 'bounceGentle 2s ease-in-out infinite'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(100px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        slideRight: {
+                            '0%': { transform: 'translateX(-100px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' }
+                        },
+                        fadeInUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        bounceGentle: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .hover-glow:hover {
+            box-shadow: 0 0 30px rgba(0, 163, 163, 0.6);
+            transform: translateY(-2px);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #67E8F9, #10B981, #FF6B35);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .fade-in {
+            animation: fade-in-up 1s ease-out;
+        }
+        
+        .slide-in-right {
+            animation: slide-right 0.8s ease-out;
+        }
+        
+        .slide-in-up {
+            animation: slide-up 0.8s ease-out;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 25%, #334155 50%, #475569 75%, #64748B 100%);
+            position: relative;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 40%, rgba(103, 232, 249, 0.2) 0%, transparent 50%);
+        }
+        
+        .medical-pattern {
+            background-image: 
+                radial-gradient(circle at 25px 25px, rgba(255,255,255,0.1) 2px, transparent 2px),
+                radial-gradient(circle at 75px 75px, rgba(16, 185, 129, 0.1) 2px, transparent 2px);
+            background-size: 100px 100px;
+        }
+        
+        .spline-container {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .spline-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+            clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+    </style>
+</head>
+<body class="bg-dark-navy text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-gradient-to-r from-accent-green to-light-cyan rounded-full flex items-center justify-center mr-3">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-bold gradient-text">Dr. Seetam Kumar</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link hover:text-accent-green transition-colors duration-300">Home</a>
+                    <a href="#about" class="nav-link hover:text-accent-green transition-colors duration-300">About</a>
+                    <a href="#expertise" class="nav-link hover:text-accent-green transition-colors duration-300">Expertise</a>
+                    <a href="#achievements" class="nav-link hover:text-accent-green transition-colors duration-300">Achievements</a>
+                    <a href="#contact" class="nav-link hover:text-accent-green transition-colors duration-300">Contact</a>
+                </div>
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden glass-effect">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 hover:text-accent-green transition-colors duration-300">Home</a>
+                <a href="#about" class="block px-3 py-2 hover:text-accent-green transition-colors duration-300">About</a>
+                <a href="#expertise" class="block px-3 py-2 hover:text-accent-green transition-colors duration-300">Expertise</a>
+                <a href="#achievements" class="block px-3 py-2 hover:text-accent-green transition-colors duration-300">Achievements</a>
+                <a href="#contact" class="block px-3 py-2 hover:text-accent-green transition-colors duration-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Redesigned hero section with split layout and enhanced animations -->
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen hero-bg spline-container relative overflow-hidden pt-20">
+        <div class="spline-bg"></div>
+        <div class="medical-pattern absolute inset-0 opacity-30"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+                <!-- Left Content -->
+                <div class="fade-in">
+                    <div class="mb-6">
+                        <span class="inline-block px-4 py-2 bg-gradient-to-r from-accent-green/20 to-light-cyan/20 rounded-full text-accent-green border border-accent-green/30 text-sm font-medium animate-bounce-gentle">
+                            ✨ Gold Medalist Interventional Radiologist
+                        </span>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                        <span class="gradient-text">Dr. T. Seetam</span><br>
+                        <span class="text-white">Kumar</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-4 text-light-cyan font-medium">
+                        Consultant — Neuro & Vascular<br>
+                        <span class="text-accent-green">Interventional Radiology</span>
+                    </p>
+                    <p class="text-lg mb-8 text-gray-300 max-w-xl leading-relaxed">
+                        Pioneering advanced minimally invasive techniques in neurovascular and endovascular interventions with cutting-edge precision and care.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="group bg-gradient-to-r from-accent-green to-light-cyan px-8 py-4 rounded-full text-white font-semibold hover-glow transition-all duration-300 text-center">
+                            <span class="flex items-center justify-center">
+                                📅 Book Appointment
+                                <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </span>
+                        </a>
+                        <a href="#about" class="group border-2 border-accent-orange/50 px-8 py-4 rounded-full text-accent-orange font-semibold hover:bg-accent-orange/10 hover:border-accent-orange transition-all duration-300 text-center">
+                            <span class="flex items-center justify-center">
+                                🔍 Learn More
+                                <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/10">
+                        <div class="text-center">
+                            <div class="text-2xl md:text-3xl font-bold text-accent-green mb-1">15+</div>
+                            <div class="text-sm text-gray-400">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl md:text-3xl font-bold text-light-cyan mb-1">5000+</div>
+                            <div class="text-sm text-gray-400">Procedures</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl md:text-3xl font-bold text-accent-orange mb-1">98%</div>
+                            <div class="text-sm text-gray-400">Success Rate</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Image/Visual -->
+                <div class="slide-in-right lg:order-2">
+                    <div class="relative">
+                        <!-- Main Image Container -->
+                        <div class="relative z-10 floating">
+                            <div class="w-80 h-80 lg:w-96 lg:h-96 mx-auto bg-gradient-to-br from-accent-green via-light-cyan to-accent-orange rounded-full p-1">
+                                <div class="w-full h-full bg-dark-navy rounded-full flex items-center justify-center overflow-hidden">
+                                    <img src="/placeholder.svg?height=350&width=350" 
+                                         alt="Dr. T. Seetam Kumar" 
+                                         class="w-full h-full object-cover rounded-full">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Elements -->
+                        <div class="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-r from-accent-green to-light-cyan rounded-full flex items-center justify-center animate-pulse-slow">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        
+                        <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r from-accent-orange to-accent-green rounded-full flex items-center justify-center animate-bounce-gentle">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                            </svg>
+                        </div>
+                        
+                        <div class="absolute top-1/2 -right-8 w-12 h-12 bg-gradient-to-r from-light-cyan to-accent-green rounded-full flex items-center justify-center animate-float">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        
+                        <!-- Background Glow -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-accent-green/20 to-light-cyan/20 rounded-full blur-3xl -z-10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-gentle">
+            <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+                <div class="w-1 h-3 bg-accent-green rounded-full mt-2 animate-pulse"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                    About Dr. Seetam Kumar
+                </h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            Dr. T. Seetam Kumar is a gold-medalist interventional radiologist with specialist expertise in neurovascular and endovascular interventions. He manages complex cerebrovascular and systemic vascular conditions using minimally invasive, image-guided techniques.
+                        </p>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            From acute stroke interventions to tumor embolisation and advanced pediatric vascular procedures, Dr. Seetam combines strong diagnostic radiology training with advanced fellowship training to provide precise, evidence-based care.
+                        </p>
+                        
+                        <div class="bg-gradient-to-r from-blue-900/50 to-purple-900/50 p-6 rounded-xl border border-blue-500/20">
+                            <h3 class="text-xl font-semibold mb-4 text-blue-200">Qualifications</h3>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-center"><span class="w-2 h-2 bg-medical-teal rounded-full mr-3"></span>MBBS (Hons)</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-medical-teal rounded-full mr-3"></span>MD Radiodiagnosis — Gold Medal</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-medical-teal rounded-full mr-3"></span>DM Interventional Radiology (NIMHANS) — Gold Medal</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-medical-teal rounded-full mr-3"></span>FRCR (UK)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-blue-900/30 to-purple-900/30 p-8 rounded-2xl border border-blue-500/20">
+                        <h3 class="text-2xl font-semibold mb-6 text-blue-200">Professional Memberships</h3>
+                        <div class="grid grid-cols-1 gap-3">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 bg-gradient-to-r from-medical-blue to-medical-teal rounded-full"></div>
+                                <span class="text-gray-300">ESMINT</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 bg-gradient-to-r from-medical-blue to-medical-teal rounded-full"></div>
+                                <span class="text-gray-300">American Society of Neuroradiology (ASNR)</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 bg-gradient-to-r from-medical-blue to-medical-teal rounded-full"></div>
+                                <span class="text-gray-300">Indian Society of Neuroradiology (ISNR)</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 bg-gradient-to-r from-medical-blue to-medical-teal rounded-full"></div>
+                                <span class="text-gray-300">Society of Pediatric Neuroradiology (SPIN)</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 bg-gradient-to-r from-medical-blue to-medical-teal rounded-full"></div>
+                                <span class="text-gray-300">Radiological Society of North America (RSNA)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                    Clinical Expertise
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Neuro/Neurovascular -->
+                    <div class="bg-gradient-to-br from-blue-900/40 to-purple-900/40 p-8 rounded-2xl border border-blue-500/20 hover-glow transition-all duration-300">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-r from-medical-blue to-medical-teal rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-blue-200">Neuro / Neurovascular</h3>
+                        </div>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-start"><span class="w-2 h-2 bg-medical-teal rounded-full mr-3 mt-2 flex-shrink-0"></span>Endovascular neurointerventions including acute arterial and venous stroke treatments</li>
+                            <li class="flex items-start"><span class="w-2 h-2 bg-medical-teal rounded-full mr-3 mt-2 flex-shrink-0"></span>Aneurysm coiling, stenting and flow diversion</li>
+                            <li class="flex items-start"><span class="w-2 h-2 bg-medical-teal rounded-full mr-3 mt-2 flex-shrink-0"></span>Brain and spinal AVM embolisation</li>
+                            <li class="flex items-start"><span class="w-2 h-2 bg-medical-teal rounded-full mr-3 mt-2 flex-shrink-0"></span>Vein of Galen malformation management</li>
+                            <li class="flex items-start"><span class="w-2 h-2 bg-medical-teal rounded-full mr-3 mt-2 flex-shrink-0"></span>Carotid angioplasty & stenting</li>
+                            <li class="flex items-start"><span class="w-2 h-2 bg-medical-teal rounded-full mr-3 mt-2 flex-shrink-0"></span>Intracranial angioplasty and stenting</li>
+                            <li class="flex items-start"><span class="w-2 h-2 bg-medical-teal rounded-full mr-3 mt-2 flex-shrink-0"></span>Pediatric vascular malformation interventions</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Body/Peripheral Vascular -->
+                    <div class="bg-gradient-to-br from-purple-900/40 to-blue-900/40 p-8 rounded-2xl border border-purple-500/20 hover-glow transition-all duration-300">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-medical-blue rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-purple-200">Body / Peripheral Vascular</h3>
+                        </div>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-start"><span class="w-2 h-2 bg-purple-400 rounded-full mr-3 mt-2 flex-shrink-0"></span>Gastrointestinal vascular interventions</li>
+                            <li class="flex items-start"><span class="w-2 h-2 bg-purple-400 rounded-full mr-3 mt-2 flex-shrink-0"></span>Hepatic vascular and non-vascular interventions</li>
+                            <li class="flex items-start"><span class="w-2 h-2 bg-purple-400 rounded-full mr-3 mt-2 flex-shrink-0"></span>Peripheral arterial and venous interventions</li>
+                            <li class="flex items-start"><span class="w-2 h-2 bg-purple-400 rounded-full mr-3 mt-2 flex-shrink-0"></span>Uterine artery embolisation (UAE)</li>
+                            <li class="flex items-start"><span class="w-2 h-2 bg-purple-400 rounded-full mr-3 mt-2 flex-shrink-0"></span>Prostatic artery embolisation (PAE)</li>
+                            <li class="flex items-start"><span class="w-2 h-2 bg-purple-400 rounded-full mr-3 mt-2 flex-shrink-0"></span>Head & neck tumour embolisation</li>
+                            <li class="flex items-start"><span class="w-2 h-2 bg-purple-400 rounded-full mr-3 mt-2 flex-shrink-0"></span>Various image-guided biopsies and drainages</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-20 bg-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                    Awards & Achievements
+                </h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-gradient-to-br from-yellow-900/40 to-orange-900/40 p-6 rounded-xl border border-yellow-500/20 hover-glow transition-all duration-300">
+                        <div class="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2 text-yellow-200">Best Ongoing Student</h3>
+                        <p class="text-gray-300 text-sm">DM NIIR (NIMHANS), 2025</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-blue-900/40 to-teal-900/40 p-6 rounded-xl border border-blue-500/20 hover-glow transition-all duration-300">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-teal-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2 text-blue-200">ISNR 2025</h3>
+                        <p class="text-gray-300 text-sm">Neuro-intervention Quiz, Second Prize</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-green-900/40 to-emerald-900/40 p-6 rounded-xl border border-green-500/20 hover-glow transition-all duration-300">
+                        <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2 text-green-200">ICRI Travel Fellowship</h3>
+                        <p class="text-gray-300 text-sm">IRIA Award, 2023</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-purple-900/40 to-pink-900/40 p-6 rounded-xl border border-purple-500/20 hover-glow transition-all duration-300">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2 text-purple-200">Magna Cum Laude</h3>
+                        <p class="text-gray-300 text-sm">ECR, 2021</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-red-900/40 to-rose-900/40 p-6 rounded-xl border border-red-500/20 hover-glow transition-all duration-300">
+                        <div class="w-12 h-12 bg-gradient-to-r from-red-500 to-rose-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2 text-red-200">Gold Medal</h3>
+                        <p class="text-gray-300 text-sm">MD Radiodiagnosis, 2020</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-indigo-900/40 to-blue-900/40 p-6 rounded-xl border border-indigo-500/20 hover-glow transition-all duration-300">
+                        <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2 text-indigo-200">Multiple University Gold Medals</h3>
+                        <p class="text-gray-300 text-sm">Top scores across multiple subjects (2010-2014)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                    Selected Publications
+                </h2>
+                
+                <div class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-8 rounded-2xl border border-slate-500/20">
+                    <div class="mb-6">
+                        <p class="text-blue-200 font-semibold mb-4">Recent Publications (2024-2025):</p>
+                        <div class="space-y-4 text-gray-300">
+                            <div class="border-l-4 border-medical-teal pl-4">
+                                <p class="text-sm leading-relaxed">Singh RP, Rima S, Kumar Seetam et al. <strong>Intersection of Autoimmunity: NMDA Positivity, Hypertrophic Pachymeningitis, and Primary CNS Angiitis in a Single Patient – A Diagnostic Challenge.</strong> Ann Indian Acad Neurol. May 2025.</p>
+                            </div>
+                            <div class="border-l-4 border-medical-blue pl-4">
+                                <p class="text-sm leading-relaxed">Singh RP, Jayanth SS, Seetam KT et al. <strong>Novel Presentation of Type 1 Wolfram Syndrome as Intracranial Haemorrhage and LETM: Neuroimaging and Angiographic Findings.</strong> Ann Indian Acad Neurol. Mar–Apr 2025.</p>
+                            </div>
+                            <div class="border-l-4 border-purple-500 pl-4">
+                                <p class="text-sm leading-relaxed">Samim MM, Chadha D, Kumar Tumulu Seetam, Kulkarni GB. <strong>Teaching Video NeuroImage: Lateral Gaze Palsy in Duane Retraction Syndrome Can Mimic Abducens Nerve Palsy.</strong> Neurology. 2025.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <a href="https://www.researchgate.net/profile/Seetam-Tumulu" target="_blank" class="inline-flex items-center bg-gradient-to-r from-medical-blue to-medical-teal px-6 py-3 rounded-full text-white font-semibold hover-glow transition-all duration-300">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                            View Full Research Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                    Contact & Appointments
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="space-y-8">
+                        <div class="bg-gradient-to-br from-blue-900/40 to-purple-900/40 p-8 rounded-2xl border border-blue-500/20">
+                            <h3 class="text-2xl font-semibold mb-6 text-blue-200">Get in Touch</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-10 h-10 bg-gradient-to-r from-medical-blue to-medical-teal rounded-lg flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-white font-semibold">Department</p>
+                                        <p class="text-gray-300">Neuro and Vascular Interventional Radiology</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-10 h-10 bg-gradient-to-r from-medical-blue to-medical-teal rounded-lg flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-white font-semibold">Languages</p>
+                                        <p class="text-gray-300">Odia, Telugu, Hindi, English</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-purple-900/40 to-blue-900/40 p-8 rounded-2xl border border-purple-500/20">
+                            <h3 class="text-2xl font-semibold mb-4 text-purple-200">Specializing In</h3>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-center"><span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>Acute Stroke Interventions</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>Aneurysm Treatment</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>Tumor Embolisation</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>Pediatric Vascular Procedures</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-8 rounded-2xl border border-slate-500/20">
+                        <h3 class="text-2xl font-semibold mb-6 text-white">Book Appointment</h3>
+                        <form id="contact-form" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-medical-blue focus:border-transparent transition-all duration-300" placeholder="Enter your full name">
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-medical-blue focus:border-transparent transition-all duration-300" placeholder="Enter your phone number">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-medical-blue focus:border-transparent transition-all duration-300" placeholder="Enter your email address">
+                            </div>
+                            
+                            <div>
+                                <label for="condition" class="block text-sm font-medium text-gray-300 mb-2">Medical Condition/Concern</label>
+                                <select id="condition" name="condition" required class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-medical-blue focus:border-transparent transition-all duration-300">
+                                    <option value="">Select your concern</option>
+                                    <option value="stroke">Stroke/Cerebrovascular Disease</option>
+                                    <option value="aneurysm">Brain Aneurysm</option>
+                                    <option value="avm">Arteriovenous Malformation (AVM)</option>
+                                    <option value="tumor">Tumor Embolisation</option>
+                                    <option value="vascular">Peripheral Vascular Disease</option>
+                                    <option value="pediatric">Pediatric Vascular Condition</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Additional Message</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-medical-blue focus:border-transparent transition-all duration-300" placeholder="Please describe your symptoms or concerns in detail"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-gradient-to-r from-medical-blue to-medical-teal px-8 py-4 rounded-lg text-white font-semibold hover-glow transition-all duration-300 transform hover:scale-105">
+                                Send WhatsApp Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-2 mb-4">
+                    <div class="w-10 h-10 bg-gradient-to-r from-medical-blue to-medical-teal rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">DS</span>
+                    </div>
+                    <span class="text-xl font-bold text-white">Dr. T. Seetam Kumar</span>
+                </div>
+                <p class="text-gray-400 mb-4">Consultant — Neuro & Vascular Interventional Radiology</p>
+                <p class="text-gray-500 text-sm">© 2025 Dr. T. Seetam Kumar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Contact form submission to WhatsApp
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const condition = document.getElementById('condition').value;
+            const message = document.getElementById('message').value;
+            
+            // Create WhatsApp message
+            const whatsappMessage = `Hello Dr. Seetam Kumar,
+
+I would like to book an appointment for consultation.
+
+*Patient Details:*
+Name: ${name}
+Phone: ${phone}
+Email: ${email}
+Medical Condition: ${condition}
+
+*Additional Message:*
+${message}
+
+Thank you for your time. Looking forward to hearing from you.`;
+
+            // Encode the message for URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // Replace with actual WhatsApp number (include country code without + sign)
+            const whatsappNumber = '919876543210'; // Replace with actual number
+            
+            // Create WhatsApp URL
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            // Open WhatsApp
+            window.open(whatsappURL, '_blank');
+            
+            // Reset form
+            this.reset();
+            
+            // Show success message
+            alert('Redirecting to WhatsApp... Please send the message to complete your appointment request.');
+        });
+
+        // Add active nav link highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-medical-teal');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('text-medical-teal');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
