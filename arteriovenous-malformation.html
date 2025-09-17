@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arteriovenous Malformation (AVM) - Dr. T. Seetam Kumar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="images/dr soumik.jpg" type="image/x-icon">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'medical-blue': '#0066CC',
+                        'medical-teal': '#00A3A3',
+                        'medical-purple': '#6B46C1',
+                        'accent-orange': '#FF6B35',
+                        'accent-green': '#10B981',
+                        'dark-navy': '#0F172A',
+                        'light-cyan': '#67E8F9'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hover-glow:hover {
+            box-shadow: 0 0 30px rgba(0, 163, 163, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #67E8F9, #10B981, #FF6B35);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 25%, #334155 50%, #475569 75%, #64748B 100%);
+            position: relative;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(103, 232, 249, 0.2) 0%, transparent 50%);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(16, 185, 129, 0.3) 0%, rgba(103, 232, 249, 0.3) 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body class="bg-dark-navy text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="index.html" class="w-16 h-16 rounded-full overflow-hidden mr-3">
+                        <img src="images/dr soumik.jpg" alt="Logo" class="w-full h-full object-cover object-top" />
+                    </a>
+                    <span class="text-xl font-bold gradient-text">Dr. Seetam Kumar</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link hover:text-accent-green transition-colors duration-300">Home</a>
+                    <a href="#about" class="nav-link hover:text-accent-green transition-colors duration-300">About</a>
+                    <a href="#services" class="nav-link hover:text-accent-green transition-colors duration-300">Services</a>
+                    <a href="#contact" class="nav-link hover:text-accent-green transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen hero-bg relative overflow-hidden pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+                <div class="order-2 lg:order-1">
+                    <div class="mb-6">
+                        <span class="inline-block px-4 py-2 bg-gradient-to-r from-accent-green/20 to-light-cyan/20 rounded-full text-accent-green border border-accent-green/30 text-sm font-medium">
+                            🧠 Advanced AVM Treatment
+                        </span>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                        <span class="gradient-text">Arteriovenous</span><br>
+                        <span class="text-white">Malformation (AVM)</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 text-light-cyan">
+                        Expert treatment of complex AVM with advanced endovascular and surgical techniques
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="px-8 py-4 bg-gradient-to-r from-accent-green to-medical-teal rounded-lg font-semibold hover-glow transition-all duration-300">
+                            Book Consultation
+                        </button>
+                        <button class="px-8 py-4 border border-light-cyan text-light-cyan rounded-lg font-semibold hover:bg-light-cyan hover:text-dark-navy transition-all duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <div class="relative">
+                        <div class="w-full h-96 bg-gradient-to-br from-medical-purple/20 to-light-cyan/20 rounded-3xl flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-6xl mb-4">🧠</div>
+                                <h3 class="text-2xl font-bold text-medical-purple">Expert AVM Care</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gradient-to-b from-dark-navy to-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="gradient-text">AVM Treatment</span> Services
+                </h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    We provide the <span class="highlight">Best Arteriovenous Malformation Doctors in Bhubaneswar</span> with expert <span class="highlight">Arteriovenous Malformation Doctors in odisha</span>. Our specialists offer comprehensive <span class="highlight">arteriovenous malformation treatment in bhubaneswar</span> with experienced <span class="highlight">arteriovenous malformation doctors in odisha</span>. We provide advanced <span class="highlight">arteriovenous malformation treatments</span> and understand various <span class="highlight">arteriovenous malformation causes</span>. Our expertise covers <span class="highlight">avm arteriovenous malformation</span> and <span class="highlight">malformation in brain</span> conditions.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-effect rounded-2xl p-8 hover-glow transition-all duration-300">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent-green">Endovascular Embolization</h3>
+                    <p class="text-gray-300">
+                        Minimally invasive treatment using coils, glue, and particles to block abnormal connections.
+                    </p>
+                </div>
+
+                <div class="glass-effect rounded-2xl p-8 hover-glow transition-all duration-300">
+                    <div class="text-4xl mb-4">🔬</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent-green">Stereotactic Radiosurgery</h3>
+                    <p class="text-gray-300">
+                        Precise radiation therapy for small to medium-sized brain AVMs.
+                    </p>
+                </div>
+
+                <div class="glass-effect rounded-2xl p-8 hover-glow transition-all duration-300">
+                    <div class="text-4xl mb-4">🏥</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent-green">Surgical Resection</h3>
+                    <p class="text-gray-300">
+                        Complete surgical removal of AVMs when appropriate and safe.
+                    </p>
+                </div>
+
+                <div class="glass-effect rounded-2xl p-8 hover-glow transition-all duration-300">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent-green">Advanced Imaging</h3>
+                    <p class="text-gray-300">
+                        Comprehensive MRI, angiography, and 3D imaging for precise AVM mapping.
+                    </p>
+                </div>
+
+                <div class="glass-effect rounded-2xl p-8 hover-glow transition-all duration-300">
+                    <div class="text-4xl mb-4">🔄</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent-green">Multimodal Treatment</h3>
+                    <p class="text-gray-300">
+                        Combined approach using embolization, surgery, and radiosurgery for complex cases.
+                    </p>
+                </div>
+
+                <div class="glass-effect rounded-2xl p-8 hover-glow transition-all duration-300">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent-green">Emergency Care</h3>
+                    <p class="text-gray-300">
+                        24/7 emergency treatment for ruptured AVMs and hemorrhagic complications.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-b from-slate-900 to-dark-navy">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="gradient-text">Contact Us</span>
+                </h2>
+                <p class="text-xl text-gray-300">
+                    Expert consultation for AVM diagnosis and treatment
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="glass-effect rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-accent-green">Get in Touch</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="text-2xl mr-4">📞</div>
+                            <div>
+                                <p class="font-semibold">Phone</p>
+                                <p class="text-gray-300">+91 XXXXX XXXXX</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="text-2xl mr-4">📧</div>
+                            <div>
+                                <p class="font-semibold">Email</p>
+                                <p class="text-gray-300">info@drseetamkumar.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="text-2xl mr-4">📍</div>
+                            <div>
+                                <p class="font-semibold">Location</p>
+                                <p class="text-gray-300">Bhubaneswar, Odisha</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-effect rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-accent-green">AVM Consultation</h3>
+                    <p class="text-gray-300 mb-6">
+                        AVM treatment requires specialized expertise and careful planning. Schedule a comprehensive consultation for personalized treatment options.
+                    </p>
+                    <button class="w-full px-8 py-4 bg-gradient-to-r from-accent-green to-medical-teal rounded-lg font-semibold hover-glow transition-all duration-300">
+                        Schedule Consultation
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-navy py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-gray-400">
+                    © 2024 Dr. T. Seetam Kumar - AVM Treatment Specialist. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

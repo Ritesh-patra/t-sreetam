@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Vein Thrombosis (DVT) - Dr. T. Seetam Kumar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="images/dr soumik.jpg" type="image/x-icon">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'medical-blue': '#0066CC',
+                        'medical-teal': '#00A3A3',
+                        'medical-purple': '#6B46C1',
+                        'accent-orange': '#FF6B35',
+                        'accent-green': '#10B981',
+                        'dark-navy': '#0F172A',
+                        'light-cyan': '#67E8F9'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hover-glow:hover {
+            box-shadow: 0 0 30px rgba(0, 163, 163, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #67E8F9, #10B981, #FF6B35);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 25%, #334155 50%, #475569 75%, #64748B 100%);
+            position: relative;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(103, 232, 249, 0.2) 0%, transparent 50%);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(16, 185, 129, 0.3) 0%, rgba(103, 232, 249, 0.3) 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body class="bg-dark-navy text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="index.html" class="w-16 h-16 rounded-full overflow-hidden mr-3">
+                        <img src="images/dr soumik.jpg" alt="Logo" class="w-full h-full object-cover object-top" />
+                    </a>
+                    <span class="text-xl font-bold gradient-text">Dr. Seetam Kumar</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link hover:text-accent-green transition-colors duration-300">Home</a>
+                    <a href="index.html#about" class="nav-link hover:text-accent-green transition-colors duration-300">About</a>
+                    <a href="index.html#services" class="nav-link hover:text-accent-green transition-colors duration-300">Services</a>
+                    <a href="index.html#contact" class="nav-link hover:text-accent-green transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen hero-bg relative overflow-hidden pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+                <div class="order-2 lg:order-1">
+                    <div class="mb-6">
+                        <span class="inline-block px-4 py-2 bg-gradient-to-r from-accent-green/20 to-light-cyan/20 rounded-full text-accent-green border border-accent-green/30 text-sm font-medium">
+                            🩸 DVT Treatment Excellence
+                        </span>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                        <span class="gradient-text">Deep Vein</span><br>
+                        <span class="text-white">Thrombosis (DVT)</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 text-light-cyan">
+                        Expert diagnosis and treatment of blood clots with advanced interventional techniques
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="index.html#contact" class="px-8 py-4 bg-gradient-to-r from-accent-green to-medical-teal rounded-lg font-semibold hover-glow transition-all duration-300 text-center">
+                            Emergency Consultation
+                        </a>
+                        <button onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})" class="px-8 py-4 border border-light-cyan text-light-cyan rounded-lg font-semibold hover:bg-light-cyan hover:text-dark-navy transition-all duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                    <!-- Added Back to Home button -->
+                    <div class="mt-4">
+                        <a href="index.html" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-medical-blue to-medical-purple rounded-lg font-semibold hover-glow transition-all duration-300">
+                            ← Back to Home
+                        </a>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <div class="relative">
+                        <div class="w-full h-96 bg-gradient-to-br from-red-500/20 to-medical-purple/20 rounded-3xl flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-6xl mb-4">🩸</div>
+                                <h3 class="text-2xl font-bold text-red-400">Expert DVT Care</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gradient-to-b from-dark-navy to-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="gradient-text">DVT Treatment</span> Services
+                </h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto mb-8">
+                    Dr. Seetam Kumar is recognized as the leading expert providing comprehensive <span class="highlight">deep vein thrombosis treatment in odisha</span> with expert <span class="highlight">Deep Vein Thrombosis Surgery in Bhubaneswar</span>. Our specialists offer advanced <span class="highlight">Deep Vein Thrombosis Treatment in Bhubaneswar</span> including <span class="highlight">deep vein thrombosis treatment</span>, <span class="highlight">dvt treatment</span>, and management of <span class="highlight">dvt symptoms</span>. Dr. Seetam Kumar expertly treats <span class="highlight">deep venous thromboembolism</span> and <span class="highlight">deep venous thrombophlebitis</span> with his exceptional skills as a <span class="highlight">dvt doctor</span> and <span class="highlight">dvt specialist</span>.
+                </p>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+                    With years of experience in interventional radiology, Dr. Seetam Kumar provides life-saving DVT treatments using the most advanced techniques. His expertise in emergency vascular care has made him the most trusted DVT specialist in Bhubaneswar, ensuring rapid diagnosis and effective treatment for all patients.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-effect rounded-2xl p-8 hover-glow transition-all duration-300">
+                    <div class="text-4xl mb-4">🔍</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent-green">Advanced Diagnosis</h3>
+                    <p class="text-gray-300">
+                        Comprehensive duplex ultrasound and CT venography for accurate DVT detection.
+                    </p>
+                </div>
+
+                <div class="glass-effect rounded-2xl p-8 hover-glow transition-all duration-300">
+                    <div class="text-4xl mb-4">💊</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent-green">Anticoagulation Therapy</h3>
+                    <p class="text-gray-300">
+                        Expert management of blood thinning medications for optimal clot prevention.
+                    </p>
+                </div>
+
+                <div class="glass-effect rounded-2xl p-8 hover-glow transition-all duration-300">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent-green">Catheter-Directed Thrombolysis</h3>
+                    <p class="text-gray-300">
+                        Minimally invasive clot-dissolving treatment delivered directly to the clot site.
+                    </p>
+                </div>
+
+                <div class="glass-effect rounded-2xl p-8 hover-glow transition-all duration-300">
+                    <div class="text-4xl mb-4">🔧</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent-green">Mechanical Thrombectomy</h3>
+                    <p class="text-gray-300">
+                        Advanced devices to physically remove large blood clots from deep veins.
+                    </p>
+                </div>
+
+                <div class="glass-effect rounded-2xl p-8 hover-glow transition-all duration-300">
+                    <div class="text-4xl mb-4">🛡️</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent-green">IVC Filter Placement</h3>
+                    <p class="text-gray-300">
+                        Protective filters to prevent clots from traveling to the lungs when needed.
+                    </p>
+                </div>
+
+                <div class="glass-effect rounded-2xl p-8 hover-glow transition-all duration-300">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent-green">Emergency Care</h3>
+                    <p class="text-gray-300">
+                        24/7 emergency treatment for acute DVT and pulmonary embolism prevention.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-b from-slate-900 to-dark-navy">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="gradient-text">Contact Us</span>
+                </h2>
+                <p class="text-xl text-gray-300">
+                    Immediate consultation for DVT symptoms and treatment
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="glass-effect rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-accent-green">Get in Touch</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="text-2xl mr-4">📞</div>
+                            <div>
+                                <p class="font-semibold">Phone</p>
+                                <p class="text-gray-300">+91 94393 37767</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="text-2xl mr-4">📧</div>
+                            <div>
+                                <p class="font-semibold">Email</p>
+                                <p class="text-gray-300">info@drseetamkumar.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="text-2xl mr-4">📍</div>
+                            <div>
+                                <p class="font-semibold">Location</p>
+                                <p class="text-gray-300">Bhubaneswar, Odisha</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-effect rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-accent-green">Emergency DVT Care</h3>
+                    <p class="text-gray-300 mb-6">
+                        DVT requires immediate medical attention. Contact us immediately if you experience leg pain, swelling, or warmth.
+                    </p>
+                    <a href="index.html#contact" class="w-full inline-block text-center px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 rounded-lg font-semibold hover:from-red-600 hover:to-red-700 transition-all duration-300">
+                        Emergency Consultation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-navy py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-gray-400">
+                    © 2024 Dr. T. Seetam Kumar - DVT Treatment Specialist. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
